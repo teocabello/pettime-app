@@ -11,15 +11,17 @@ import RegistroPaso3 from './RegistroPaso3';
 import Inicio from './Inicio';
 import Servicios from './Servicios';
 import Historial from './Historial';
+import HistorialB from './HistorialB';
 import Perfil from './Perfil';
+import EditarPerfil from './EditarPerfil';
 import AgregarMascota from './AgregarMascota';
 import MisMascotas from './MisMascotas';
 import EditarMascota from './EditarMascota';
-import EditarPerfil from './EditarPerfil';
+import ReservaConsulta from './ReservaConsulta';
 import ReservaCuidado from './ReservaCuidado';
+import ReservaExitosa from './ReservaExitosa';
 import ReservaLimpieza from './ReservaLimpieza';
 import ReservaPaseo from './ReservaPaseo';
-import ReservaConsulta from './ReservaConsulta';
 
 function App() {
   return (
@@ -60,10 +62,28 @@ function App() {
             />
 
             <Route
+              path="/historialb"
+              element={
+                <ProtectedRoute>
+                  <HistorialB />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
               path="/perfil"
               element={
                 <ProtectedRoute>
                   <Perfil />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/editar-perfil"
+              element={
+                <ProtectedRoute>
+                  <EditarPerfil />
                 </ProtectedRoute>
               }
             />
@@ -96,10 +116,10 @@ function App() {
             />
 
             <Route
-              path="/editar-perfil"
+              path="/reserva-consulta"
               element={
                 <ProtectedRoute>
-                  <EditarPerfil />
+                  <ReservaConsulta />
                 </ProtectedRoute>
               }
             />
@@ -109,6 +129,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ReservaCuidado />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/reserva-exitosa"
+              element={
+                <ProtectedRoute>
+                  <ReservaExitosa />
                 </ProtectedRoute>
               }
             />
@@ -127,15 +156,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ReservaPaseo />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/reserva-consulta"
-              element={
-                <ProtectedRoute>
-                  <ReservaConsulta />
                 </ProtectedRoute>
               }
             />
