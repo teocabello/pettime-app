@@ -9,19 +9,17 @@ import Registro from './Registro';
 import RegistroPaso2 from './RegistroPaso2';
 import RegistroPaso3 from './RegistroPaso3';
 import Inicio from './Inicio';
-import MisMascotas from './MisMascotas';
-import AgregarMascota from './AgregarMascota';
-import EditarMascota from './EditarMascota';
 import Servicios from './Servicios';
+import Historial from './Historial';
+import Perfil from './Perfil';
+import AgregarMascota from './AgregarMascota';
+import MisMascotas from './MisMascotas';
+import EditarMascota from './EditarMascota';
+import EditarPerfil from './EditarPerfil';
 import ReservaCuidado from './ReservaCuidado';
-import ReservaExitosa from './ReservaExitosa';
 import ReservaLimpieza from './ReservaLimpieza';
 import ReservaPaseo from './ReservaPaseo';
 import ReservaConsulta from './ReservaConsulta';
-import Perfil from './Perfil';
-import EditarPerfil from './EditarPerfil';
-import Historial from './Historial';
-import HistorialB from './HistorialB';
 
 function App() {
   return (
@@ -44,10 +42,28 @@ function App() {
             />
 
             <Route
-              path="/mis-mascotas"
+              path="/servicios"
               element={
                 <ProtectedRoute>
-                  <MisMascotas />
+                  <Servicios />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/historial"
+              element={
+                <ProtectedRoute>
+                  <Historial />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/perfil"
+              element={
+                <ProtectedRoute>
+                  <Perfil />
                 </ProtectedRoute>
               }
             />
@@ -62,6 +78,15 @@ function App() {
             />
 
             <Route
+              path="/mis-mascotas"
+              element={
+                <ProtectedRoute>
+                  <MisMascotas />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
               path="/editar-mascota"
               element={
                 <ProtectedRoute>
@@ -71,10 +96,10 @@ function App() {
             />
 
             <Route
-              path="/servicios"
+              path="/editar-perfil"
               element={
                 <ProtectedRoute>
-                  <Servicios />
+                  <EditarPerfil />
                 </ProtectedRoute>
               }
             />
@@ -84,15 +109,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ReservaCuidado />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/reserva-exitosa"
-              element={
-                <ProtectedRoute>
-                  <ReservaExitosa />
                 </ProtectedRoute>
               }
             />
@@ -120,42 +136,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ReservaConsulta />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/perfil"
-              element={
-                <ProtectedRoute>
-                  <Perfil />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/editar-perfil"
-              element={
-                <ProtectedRoute>
-                  <EditarPerfil />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/historial"
-              element={
-                <ProtectedRoute>
-                  <Historial />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/historialb"
-              element={
-                <ProtectedRoute>
-                  <HistorialB />
                 </ProtectedRoute>
               }
             />
